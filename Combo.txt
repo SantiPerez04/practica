@@ -1,0 +1,14 @@
+    Public Sub Cargar_Combo_Pro()
+
+        Dim o_Ciu As New Clase_Ciudades
+
+        oDs = o_Ciu.Cargar_Combo_Pro
+
+        With cboProvincias
+            .DataSource = oDs.Tables(0)
+            .DataTextField = oDs.Tables(0).Columns(1).ToString
+            .DataValueField = oDs.Tables(0).Columns(0).ToString
+            .DataBind()
+        End With
+
+    End Sub
